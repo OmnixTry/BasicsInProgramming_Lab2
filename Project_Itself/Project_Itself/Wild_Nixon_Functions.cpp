@@ -28,3 +28,14 @@ void winners(int *sums, string *countries, int size) {
 	}
 	results.close();
 }
+
+void contest_results(int **points, string *countries) {
+	ifstream the_file("eurovision.csv");
+	string buff;
+	getline(the_file, buff);
+	int size = stoi(buff);
+	int *sums = new int[size];
+	summing_up(points, sums, size);
+	winners(sums, countries, size);
+	the_file.close();
+}
