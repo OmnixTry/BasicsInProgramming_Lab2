@@ -13,3 +13,18 @@ void summing_up(int **points, int *sums, int size) {
 			sums[i] += points[i][j];
 }
 
+void winners(int *sums, string *countries, int size) {
+	int index = 0;
+	int backup;
+	ofstream results("results.csv", ios::trunc);
+	for (int i = 1; i <= 10; i++) {
+		for (int j = 0; j < size; j++) {
+			if (sums[index] < sums[j]) index = j;
+		}
+		
+		results << i << " - " << countries[index] << ": " << sums[index] << "\n";
+		sums[index] = -1;
+		index = 0;
+	}
+	results.close();
+}
