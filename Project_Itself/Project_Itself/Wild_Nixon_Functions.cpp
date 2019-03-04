@@ -12,3 +12,4 @@ void summing_up(int **points, int *sums, int size) {
 		for (int j = 0; j < size; j++)
 			sums[i] += points[i][j];
 }
+
