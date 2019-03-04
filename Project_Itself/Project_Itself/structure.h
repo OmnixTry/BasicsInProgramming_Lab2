@@ -3,6 +3,6 @@
 using namespace std;
 
 struct winners {
-	int *results;
-	string *countries;
+	int *results; // pointer to array with numbers 
+	string *names; // pointer to array with country names
 };
