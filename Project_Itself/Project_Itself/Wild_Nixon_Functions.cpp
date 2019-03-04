@@ -5,13 +5,10 @@
 #include "Wild_Nixon_Functions.h"
 using namespace std;
 
-void summing_up(winners &countries) {
-	ifstream eurovision("eurovision.csv");
-	string buff;
-	int number;
-	eurovision >> buff;
-	number = stoi(buff);
-	countries.results = new int[number];
-	countries.names = new string[number];
-
+void summing_up(int **points, int *sums, int size) {
+	for (int i = 0; i < size; i++)
+		sums[i] = 0;
+	for (int i = 0; i < size; i++)
+		for (int j = 0; j < size; j++)
+			sums[i] += points[i][j];
 }
