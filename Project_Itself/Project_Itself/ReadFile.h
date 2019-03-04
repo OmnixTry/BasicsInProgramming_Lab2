@@ -1,2 +1,2 @@
-using namespace std;
-vector<string> ReadFile(string, int&);
+#pragma once
+string *ReadFile (string, int&);
