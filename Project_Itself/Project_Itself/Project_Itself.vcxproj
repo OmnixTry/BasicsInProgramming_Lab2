@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ReadFile.cpp" />
     <ClCompile Include="Wild_Nixon_Functions.cpp" />
   </ItemGroup>
   <ItemGroup>
