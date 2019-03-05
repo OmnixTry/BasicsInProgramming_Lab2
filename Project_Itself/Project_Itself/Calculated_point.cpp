@@ -32,11 +32,28 @@ vector<string> *search(vector<string> *arr, int max, int i, vector<int> &ball, i
 	}
 }
 
+void CreateBall(vector<int> &ball,int count_country) {
+	for (int i = 0; i < count_country-10;i++) {
+		ball.push_back(0);
+	}
+	ball.push_back(1);
+	ball.push_back(2);
+	ball.push_back(3);
+	ball.push_back(4);
+	ball.push_back(5);
+	ball.push_back(6);
+	ball.push_back(7);
+	ball.push_back(8);
+	ball.push_back(10);
+	ball.push_back(12);
+}
+
 vector<string> *Calculated_point(vector<string> *arr, int count_country) {
 	cout << "Calculated_point" << endl;
 	vector<int> point;
 	int max;
-	vector<int> ball = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12 };
+	vector<int> ball;
+	CreateBall(ball, count_country);
 	for (size_t i = 1; i < arr[i].size(); i++) {
 		for (int j = 0; j < count_country; j++) {
 			point.push_back(stoi(arr[j][i]));
@@ -47,7 +64,7 @@ vector<string> *Calculated_point(vector<string> *arr, int count_country) {
 			point.pop_back();
 			arr = search(arr, max, i, ball, count_country);
 		}
-		ball = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12 };
+		CreateBall(ball, count_country);
 	}
 	
 	return arr;
