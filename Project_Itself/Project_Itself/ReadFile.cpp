@@ -2,10 +2,11 @@
 #include <string>
 #include <fstream>
 #include "stdlib.h"
+#include <vector>
 #include "ReadFile.h"
 using namespace std;
 
-string *ReadFile(string path, int &count_country) {
+vector<string> readfile(string path, int &count_country) {
 	ifstream fin;
 	fin.open(path);
 	if (!fin.is_open()) {
@@ -19,15 +20,13 @@ string *ReadFile(string path, int &count_country) {
 		int i = 0;
 
 		fin.getline(ch, 50);
-		int count_country = atoi(ch);
-		string *arr = new string[count_country];
+		count_country = atoi(ch);
+		cout << "Count_country= " << count_country << endl;
+		vector<string> arr;
 		while (!fin.eof()) {
 			getline(fin, str);
-			arr[i] = str;
+			arr.push_back(str);
 			i++;
-		}
-		for (i = 0; i < count_country; i++) {
-			cout << arr[i] << endl;
 		}
 		return arr;
 	}

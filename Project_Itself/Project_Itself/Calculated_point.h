@@ -1,3 +1,3 @@
 #pragma once
-
-string Calculated_point(string*, int);
+using namespace std;
+void Calculated_point(vector<string>*, int);
