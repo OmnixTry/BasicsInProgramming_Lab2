@@ -66,6 +66,6 @@ vector<string> *Calculated_point(vector<string> *arr, int count_country) {
 		}
 		CreateBall(ball, count_country);
 	}
-	
+
 	return arr;
 }

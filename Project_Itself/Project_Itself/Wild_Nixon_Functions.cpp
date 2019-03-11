@@ -34,7 +34,7 @@ void winners(vector<string> *arr, int count_country) {
 		}
 	}
 	for (int i = 0; i < 10; i++) {
-		results << i + 1 << " - " << arr[i][0] << ": " << arr[i][1] << "\n";
+		results << i + 1 << "," << arr[i][0] << "," << arr[i][1] << "\n";
 	}
 	results.close();
 }
